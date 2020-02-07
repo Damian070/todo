@@ -22,7 +22,10 @@
             "tsConfig": "apps/todo/tsconfig.app.json",
             "aot": false,
             "assets": ["apps/todo/src/favicon.ico", "apps/todo/src/assets"],
-            "styles": ["apps/todo/src/styles.scss"],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "apps/todo/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -235,6 +238,329 @@
           "options": {
             "jestConfig": "libs/domain/jest.config.js",
             "tsConfig": "libs/domain/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "ui-header": {
+      "root": "libs/ui-header",
+      "sourceRoot": "libs/ui-header/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ui-header/tsconfig.lib.json",
+              "libs/ui-header/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/ui-header/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ui-header/jest.config.js",
+            "tsConfig": "libs/ui-header/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "ui-todos-table": {
+      "root": "libs/ui-todos-table",
+      "sourceRoot": "libs/ui-todos-table/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ui-todos-table/tsconfig.lib.json",
+              "libs/ui-todos-table/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/ui-todos-table/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ui-todos-table/jest.config.js",
+            "tsConfig": "libs/ui-todos-table/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "ui-add-edit-todo-form": {
+      "projectType": "library",
+      "root": "ui-add-edit-todo-form",
+      "sourceRoot": "ui-add-edit-todo-form/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "ui-add-edit-todo-form/tsconfig.lib.json",
+            "project": "ui-add-edit-todo-form/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "ui-add-edit-todo-form/src/test.ts",
+            "tsConfig": "ui-add-edit-todo-form/tsconfig.spec.json",
+            "karmaConfig": "ui-add-edit-todo-form/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "ui-add-edit-todo-form/tsconfig.lib.json",
+              "ui-add-edit-todo-form/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    },
+    "chcfh": {
+      "root": "libs/chcfh",
+      "sourceRoot": "libs/chcfh/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/chcfh/tsconfig.lib.json",
+              "libs/chcfh/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/chcfh/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/chcfh/jest.config.js",
+            "tsConfig": "libs/chcfh/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "test": {
+      "root": "libs/test",
+      "sourceRoot": "libs/test/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/test/tsconfig.lib.json",
+              "libs/test/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/test/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/test/jest.config.js",
+            "tsConfig": "libs/test/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "hhj": {
+      "root": "libs/hhj",
+      "sourceRoot": "libs/hhj/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/hhj/tsconfig.lib.json",
+              "libs/hhj/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/hhj/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/hhj/jest.config.js",
+            "tsConfig": "libs/hhj/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "todo-as": {
+      "root": "libs/todo/as",
+      "sourceRoot": "libs/todo/as/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/todo/as/tsconfig.lib.json",
+              "libs/todo/as/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/todo/as/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/todo/as/jest.config.js",
+            "tsConfig": "libs/todo/as/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "shared-ui-add-edit-todo-form": {
+      "root": "libs/shared/ui-add-edit-todo-form",
+      "sourceRoot": "libs/shared/ui-add-edit-todo-form/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/ui-add-edit-todo-form/tsconfig.lib.json",
+              "libs/shared/ui-add-edit-todo-form/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/ui-add-edit-todo-form/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/ui-add-edit-todo-form/jest.config.js",
+            "tsConfig": "libs/shared/ui-add-edit-todo-form/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "todo-shared-ui-add-edit-todo-form": {
+      "root": "libs/todo/shared/ui-add-edit-todo-form",
+      "sourceRoot": "libs/todo/shared/ui-add-edit-todo-form/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/todo/shared/ui-add-edit-todo-form/tsconfig.lib.json",
+              "libs/todo/shared/ui-add-edit-todo-form/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/todo/shared/ui-add-edit-todo-form/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/todo/shared/ui-add-edit-todo-form/jest.config.js",
+            "tsConfig": "libs/todo/shared/ui-add-edit-todo-form/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "ui-todo-table-form-wrapper": {
+      "root": "libs/ui-todo-table-form-wrapper",
+      "sourceRoot": "libs/ui-todo-table-form-wrapper/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ui-todo-table-form-wrapper/tsconfig.lib.json",
+              "libs/ui-todo-table-form-wrapper/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/ui-todo-table-form-wrapper/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ui-todo-table-form-wrapper/jest.config.js",
+            "tsConfig": "libs/ui-todo-table-form-wrapper/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "libs-todo-shared-ui-todo-table-form-wrapper": {
+      "root": "libs/libs/todo/shared/ui-todo-table-form-wrapper",
+      "sourceRoot": "libs/libs/todo/shared/ui-todo-table-form-wrapper/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/libs/todo/shared/ui-todo-table-form-wrapper/tsconfig.lib.json",
+              "libs/libs/todo/shared/ui-todo-table-form-wrapper/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/libs/todo/shared/ui-todo-table-form-wrapper/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/libs/todo/shared/ui-todo-table-form-wrapper/jest.config.js",
+            "tsConfig": "libs/libs/todo/shared/ui-todo-table-form-wrapper/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "todo-shared-ui-todo-table-form-wrapper": {
+      "root": "libs/todo/shared/ui-todo-table-form-wrapper",
+      "sourceRoot": "libs/todo/shared/ui-todo-table-form-wrapper/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/todo/shared/ui-todo-table-form-wrapper/tsconfig.lib.json",
+              "libs/todo/shared/ui-todo-table-form-wrapper/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/todo/shared/ui-todo-table-form-wrapper/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/todo/shared/ui-todo-table-form-wrapper/jest.config.js",
+            "tsConfig": "libs/todo/shared/ui-todo-table-form-wrapper/tsconfig.spec.json"
           }
         }
       }
